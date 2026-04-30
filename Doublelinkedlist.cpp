@@ -55,7 +55,7 @@ public:
             START = newNode;
             return;
         }
-    // insert in between node
+        // insert in between node
         // Step 8: Locate position for insertion
         Node *current = START;
         while (current->next != NULL && current->next->noMhs < nim)
@@ -64,8 +64,6 @@ public:
         }
 
         if (current->next != NULL && nim == current->next->noMhs)
-        {
-            if (current->next != NULL && nim == current->next->noMhs)
         {
             cout << "\nDuplicate roll numbers not allowed" << endl;
             return;
@@ -80,6 +78,19 @@ public:
             current->next->prev = newNode; // Step 9c: current.next.prev = newNode
 
         current->next = newNode; // Step 9d: current.next = newNode
+    
     }
+
+
+    void hapus()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
         }
+
+        cout << "\nEnter the roll number of the student whose record is to be deleted: ";
+        int rollNo;
+        cin >> rollNo;
 };
